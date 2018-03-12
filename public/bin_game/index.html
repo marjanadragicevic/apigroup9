@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SKETCH</title>
+  
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+
+</head>  
+<body>
+
+<div class="wrapper">
+<h1>RECYCLING GAME</h1>
+<h2>-A fun interactive game that will teach you about recycling-</h2>
+
+<button id="instructions" class="button" onclick="alert('Drag the garbage into the correct bin')"> HOW TO PLAY</button>
+
+</div>
+
+
+
+
+
+<div class="picturewrapper">
+  <img src= "images/bottle.png" id="plastic" class="draggable drag-drop" style="height: 150px"></img> 
+  <img src= "images/news.png" id="paper" class="draggable drag-drop" style="height: 150px"></img>
+  <img src= "images/can.png" id="metal" class="draggable drag-drop" style="height: 150px"></img>
+  <img src= "images/soupcan.png" id="metal" class="draggable drag-drop" style="height: 150px"></img>
+  <img src= "images/bag.png" id="plastic" class="draggable drag-drop" style="height: 150px"></img> 
+  <img src= "images/box.png" id="paper" class="draggable drag-drop" style="height: 150px"></img>
+</div>
+
+
+<div class="grid-container">
+
+  <div> <img src= "images/binP.png"  id="inner-dropzone" class="bin_plastic" style="height: 400px"> </img></div>
+  <div> <img src= "images/binPA.png"  id="inner-dropzone" class="bin_paper" style="height: 400px"> </img></div>
+  <div> <img src= "images/binM.png"  id="inner-dropzone" class="bin_metal" style="height: 400px">  </img></div>
+ 
+
+</div>
+<script src="lib/interact.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
