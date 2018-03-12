@@ -1,3 +1,5 @@
+/** DRAG AND DROP **/
+
 #dropzone-cat {
     position: absolute;
     width: 310px;
@@ -39,7 +41,6 @@
     margin: 10px auto 30px;
     padding: 10px;
     width: 80%;
-    transition: background-color 0.3s;
   }
   
   .drop-active {
@@ -47,7 +48,7 @@
   }
   
   .drop-target {
-    background-color: #29e;
+    background-color: #aaa;
     border-color: #fff;
     border-style: solid;
   }
@@ -68,7 +69,7 @@
   }
   
 
-  /* Resize */
+  /* RESIZE */
 
 
   .resize-drag, .resize-drag-2, .resize-drag-3, .resize-drag-4 {
@@ -119,4 +120,53 @@
     position: relative;
   }
   
+
+/*** SLDIER **/
   
+  /* the slider bar */
+  .slider {
+    position: relative;
+    width: 100%;
+    height: 1em;
+    margin: 1.5em auto;
+    background-color: #000000;
+    border-radius: 0.5em;
+    box-sizing: border-box;
+    font-size: 3vmin;
+    -ms-touch-action: none;
+    touch-action: none;
+  }
+  
+  /* the slider handle */
+  .slider:before {
+    content: "";
+    display: block;
+    position: relative;
+    top: -0.5em;
+    background-image: url(img/slider.png);
+    background-position: top left;
+    background-size: 34px;
+    background-repeat: no-repeat;
+    width: 2em;
+    height: 2em;
+    margin-left: -1em;
+    border: solid 0.25em #fff;
+    border-radius: 1em;
+    background-color: inherit;
+    box-sizing: border-box;
+  }
+  
+  /* display the value */
+  .slider:after {
+    content: attr(data-value);
+    position: absolute;
+    top: -1.5em;
+    width: 2em;
+    line-height:1em;
+    margin-left: -1em;
+    text-align: center;
+    font-size: 14px;
+    color: gray;
+  }
+  
+  body { margin: 5% 10%; }

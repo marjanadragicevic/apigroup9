@@ -1,4 +1,4 @@
-/// DRAG CODE FOR THE DRAGGING TO WORK ***
+/*** DRAG CODE FOR THE DRAGGING TO WORK ***/
 
 // target elements with the "draggable" class
 interact('.draggable')
@@ -22,11 +22,9 @@ interact('.draggable')
 
   function dragMoveListener (event) {
     var target = event.target,
-        // keep the dragged position in the data-x/data-y attributes
         x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
         y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
 
-    // translate the element
     target.style.webkitTransform =
     target.style.transform =
       'translate(' + x + 'px, ' + y + 'px)';
@@ -40,12 +38,12 @@ interact('.draggable')
   window.dragMoveListener = dragMoveListener;
 
 
-/// *** DRAG AND DROP ***
+/*** DRAG AND DROP ***/
 
 
-// enable draggables to be dropped into this
+// enable draggables to be dropped on elements
 interact('.dropzone').dropzone({
-    // only accept elements matching this CSS selector
+    // only accept elements with a specific css name
     accept: '#pointer',
     // Require a 75% element overlap for a drop to be possible
     overlap: 0.75,
@@ -87,7 +85,7 @@ interact('.dropzone').dropzone({
   });
 
 
-  // *** RESIZE DRAG ***
+  /*** RESIZE DRAG ***/
 
   interact('.resize-drag, .resize-drag-2, .resize-drag-3, .resize-drag-4')
   .draggable({
@@ -127,4 +125,22 @@ interact('.dropzone').dropzone({
 
     target.setAttribute('data-x', x);
     target.setAttribute('data-y', y);
+  });
+
+
+  /**** SLIDER ****/
+
+  interact('.slider')                   
+  .origin('self')                     
+  .draggable({
+    restrict: { restriction: 'self' },
+    // keep the drag within the element itself 
+    onmove: function (event) {        
+        // call this function on every dragmove
+      var sliderWidth = interact.getElementRect(event.target.parentNode).width,
+          value = event.pageX / sliderWidth;
+
+      event.target.style.paddingLeft = (value * 100) + '%'; //Makes sure that it moves with the pointer
+      event.target.setAttribute('data-value', value.toFixed(2));
+    }
   });
