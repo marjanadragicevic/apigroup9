@@ -1,0 +1,44 @@
+body {
+    font-family: 'Roboto', sans-serif;   
+
+}
+
+.presentation {
+    text-align: center;
+}
+
+.drag-drop {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    z-index: 999;
+    display: block;
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0%, 0%);
+    background-image: url(img/slider.png);
+    background-position: top left;
+    background-size: 80px;
+    left: 45%;
+    background-repeat: no-repeat;
+}
+
+.wrapper {
+    min-height: 600px;
+    width: 100%;
+}
+
+.wrapper-left {
+    border: 2px solid black;
+    height: 100%;
+    min-height: 600px;
+    width: 49%;
+    display: inline-block;
+}
+
+.wrapper-right {
+    border: 2px solid black;
+    height: 100%;
+    min-height: 600px;
+    width: 49%;
+    display: inline-block;
+}
