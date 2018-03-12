@@ -1,15 +1,12 @@
 body {
-    background: white;
     font-family: 'Roboto', sans-serif;   
 }
 
 h1 {
-  
   font-size: 60px;
 }
 
 h2 {
-  
   font-size: 25px;
 }
 
@@ -28,51 +25,13 @@ h2 {
   text-align: center;
 }
 
-#inner-dropzone {
-  height: 80px;
-
-}
-   
-
 .dropzone {
-  background-color: yellow;
   border: dashed 4px transparent;
   border-radius: 4px;
   margin: 10px auto 30px;
   padding: 10px;
   width: 80%;
   transition: background-color 0.3s;
-}
-
-
-.drop-active {
-  border-color: pink;
-
-}
-
-.drop-target {
-  
-}
-
-.drag-drop {
-  display: inline-block;
-  min-width: 40px;
-  padding: 2em 0.5em;
-  height: 50%;
-  
-
-  color: purple;
-
-
-  -webkit-transform: translate(0px, 0px);
-          transform: translate(0px, 0px);
-
-  transition: background-color 0.3s;
-}
-
-.drag-drop.can-drop {
-  color: #000;
-  
 }
 
 .wrong-drop {
