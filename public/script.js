@@ -33,3 +33,27 @@ window.onload = function(){
     window.dragMoveListener = dragMoveListener;
   
   }
+
+
+  /*** DROPZONE ***/ 
+  interact('.wrapper-left').dropzone({
+
+    accept: '#pointer',
+    overlap: 0.75,
+
+    ondrop: function (event) {
+      window.open("bin_game/index.html");
+      console.log("yes");
+    },
+  })
+
+  interact('.wrapper-right').dropzone({
+
+    accept: '#pointer',
+    overlap: 0.75,
+
+    ondrop: function (event) {
+      window.open("feeling_game/index.html");
+      console.log("yes");
+    },
+  })
