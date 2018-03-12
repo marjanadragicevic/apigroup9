@@ -19,11 +19,10 @@
     width: 90px;
     bottom: 60px;
     right: 35px;
-    border: none;
   }
 
   .dropzone-container {
-    width: 680px;
+    width: 700px;
     height: 680px;
     position: relative;
     display: block;
@@ -48,15 +47,16 @@
   }
   
   .drop-target {
-    background-color: #29e transparent;
+    background-color: #29e;
+    border-color: #fff;
     border-style: solid;
   }
   
   .drag-drop {
     display: inline-block;
-    position:relative;
     width: 80px;
     height: 80px;
+    position: relative;
     z-index: 999;
     display: block;
     -webkit-transform: translate(0px, 0px);
@@ -66,4 +66,57 @@
     background-size: 80px;
     background-repeat: no-repeat;
   }
+  
+
+  /* Resize */
+
+
+  .resize-drag, .resize-drag-2, .resize-drag-3, .resize-drag-4 {
+    background-color:#000;
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+    border-radius: 4px 4px 0 0;
+    padding: 20px;
+    margin: 30px 20px;
+    width: 25px;
+    /* This makes things *much* easier */
+    box-sizing: border-box;
+  }
+  
+  .resize-drag {
+      position: absolute;
+      bottom: 77px;
+      left: 40px;
+  }
+  
+  .resize-drag-2 {
+      position: absolute;
+      bottom: 77px;
+      left: 124px;
+  }
+  
+  .resize-drag-3 {
+      position: absolute;
+      bottom: 77px;
+      left: 225px;
+  }
+  
+  .resize-drag-4 {
+      position: absolute;
+      bottom: 77px;
+      left: 320px;
+  }
+  
+  .resize-container {
+    display: inline-block;
+    width: 100%;
+    height: 500px;
+    background-image: url(img/test-diagram.png);
+    background-position: top left;
+    background-size: 450px;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  
   

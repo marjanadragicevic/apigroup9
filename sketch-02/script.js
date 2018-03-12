@@ -86,3 +86,45 @@ interact('.dropzone').dropzone({
     }
   });
 
+
+  // *** RESIZE DRAG ***
+
+  interact('.resize-drag, .resize-drag-2, .resize-drag-3, .resize-drag-4')
+  .draggable({
+    onmove: window.dragMoveListener,
+    restrict: {
+      restriction: 'parent',
+      elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
+    },
+  })
+  .resizable({
+    // resize only top
+    edges: { left: false, right: false, bottom: false, top: true },
+
+    // Dont go outside of wrapper
+    restrictEdges: {
+      outer: 'parent',
+      endOnly: true,
+    },
+
+    // Start size and minimun size of box
+    restrictSize: {
+      min: { width: 20, height: 50 },
+    },
+
+  })
+  .on('resizemove', function (event) {
+    var target = event.target,
+        x = (parseFloat(target.getAttribute('data-x')) || 0),
+        y = (parseFloat(target.getAttribute('data-y')) || 0);
+
+    // update the element's style 
+    target.style.width  = event.rect.width + 'px';
+    target.style.height = event.rect.height + 'px';
+
+    target.style.webkitTransform = target.style.transform =
+        'translate(' + x + 'px,' + y + 'px)';
+
+    target.setAttribute('data-x', x);
+    target.setAttribute('data-y', y);
+  });
