@@ -12,7 +12,18 @@ If you just want to try our demo:
 
 Download our project on git: https://github.com/marjanadragicevic/apigroup9
 
-Start it up locally and voila; the interact.js file comes in the lib folder making it available for you instantly.
+The interact.js file comes in the lib folder making it available for you instantly, you just need to start it correclty now.
 
-Please visit https://interact.io where you can find the author and more documentation.
+Steps:
+
+OPEN DOWNLOADED ZIP
+
+GO TO PUBLIC
+
+DOUBLE CLICK INDEX.HTML
+
+To see sketches, feel free to browse through sketch-01 and 02
+
+
+Please visit https://interact.io where you can find the author and more documentation, all credit goes to him for this excellent library.
 
