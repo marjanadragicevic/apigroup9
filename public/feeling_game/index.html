@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SKETCH Marri</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+</head>  
+<body>
+
+
+    
+<div class="presentation">
+        <h2>Lets get to now you better.</h2>
+</div>
+
+<div id="page1">
+    <div id="pointer" class="draggable drag-drop">
+
+    </div>
+
+    <!-- Print msg -->
+    <div class="message" style="display:block">Pick something nice. Drag the hexagon calmly and choose.</div>
+    <div class="message-cat" style="display:none">Are you sure?</div>
+    <div class="message-dog" style="display:none">What an excellent choice. Looks like we feel the same way.</div>
+    <div class="message-snail" style="display:none">...</div>
+
+
+    <div class="dropzone-container">
+        <div id="dropzone-cat" class="dropzone"></div>
+        <div id="dropzone-dog" class="dropzone"></div>
+        <div id="dropzone-snail" class="dropzone"></div>
+    </div>
+    <div class="next"><a href="#page2"></a>Scroll down for more.</div>
+</div>
+
+
+
+<div id="page2">
+    <h1>Resize in a diagram</h1>
+
+    <div class="resize-container">
+        <div class="resize-drag"></div>
+        <div class="resize-drag-2"></div>
+        <div class="resize-drag-3"></div>
+    </div>
+    <div class="message-diagram" style="display:block">Please pull and adjust the diagram by the blue lines.</div>
+    <div class="message-diagram-accepted" style="display:none">Excellent prioritizing.</div>
+
+    <div class="next"><a href="#page3"></a>Scroll down for more.</div>
+</div>
+
+<div id="page3">
+    <h1>How are you as a person?</h1>
+
+    <div id="wrapper-slider">
+        <div class="one-slide-wrap">
+            
+
+        </div>
+        <div class="slider"></div>
+        <div class="slider"></div>
+        <div class="slider"></div>
+    </div>
+    <button class="next" onclick="closeCurrentWindow()">Great job! Let's go back to the main page.</button>
+</div>
+
+<script src="../lib/interact.js"></script>
+<script src="script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+</body>
+</html>
