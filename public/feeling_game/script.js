@@ -2,34 +2,34 @@
 /*** DRAG CODE FOR THE DRAGGING TO WORK ***/
 
 interact('.draggable')
-  .draggable({
-    // keep the element within the area of it's parent (wrapper)
-    restrict: {
-      restriction: "parent",
-      endOnly: true,
-      elementRect: { top: 0, left: 0, bottom: 1, right: 1 },
-    },
-    autoScroll: true,
-    /* "Listens" to if the element is draged, see the function below */
-    onmove: dragMoveListener,
-  });
+.draggable({
+  // keep the element within the area of it's parent (wrapper)
+  restrict: {
+    restriction: "parent",
+    endOnly: true,
+    elementRect: { top: 0, left: 0, bottom: 1, right: 1 },
+  },
+  autoScroll: true,
+  /* "Listens" to if the element is draged, see the function below */
+  onmove: dragMoveListener,
+});
 
-  function dragMoveListener (event) {
-    var target = event.target,
-        x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
-        y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+function dragMoveListener (event) {
+  var target = event.target,
+      x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+      y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
 
-    target.style.webkitTransform =
-    target.style.transform =
-      'translate(' + x + 'px, ' + y + 'px)';
+  target.style.webkitTransform =
+  target.style.transform =
+    'translate(' + x + 'px, ' + y + 'px)';
 
-    // update the position after every move so that it actually moves
-    target.setAttribute('data-x', x);
-    target.setAttribute('data-y', y);
-  }
+  // update the position after every move so that it actually moves
+  target.setAttribute('data-x', x);
+  target.setAttribute('data-y', y);
+}
 
-  // THIS PIECE IS CRUCIAL FOR THE OTHER SKETCHES TO WORK like resize etc
-  window.dragMoveListener = dragMoveListener;
+// THIS PIECE IS CRUCIAL FOR THE OTHER SKETCHES TO WORK like resize etc
+window.dragMoveListener = dragMoveListener;
 
 
 /*** DRAG AND DROP ***/
@@ -110,55 +110,55 @@ interact('#dropzone-snail').dropzone({
 
   /*** RESIZE DRAG ***/
 
-  interact('.resize-drag, .resize-drag-2, .resize-drag-3')
-  .draggable({
-    onmove: window.dragMoveListener,
-    restrict: {
-      restriction: 'parent',
-      elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
-    },
-  })
+interact('.resize-drag, .resize-drag-2, .resize-drag-3')
+.draggable({
+  onmove: window.dragMoveListener,
+  restrict: {
+    restriction: 'parent',
+    elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
+  },
+})
 
-  .resizable({
-    // resize only top
-    edges: { left: false, right: false, bottom: false, top: true },
+.resizable({
+  // resize only top
+  edges: { left: false, right: false, bottom: false, top: true },
 
-    // Dont go outside of wrapper
-    restrictEdges: {
-      outer: 'parent',
-      endOnly: true,
-    },
+  // Dont go outside of wrapper
+  restrictEdges: {
+    outer: 'parent',
+    endOnly: true,
+  },
 
-    // Start size and minimun size of box
-    restrictSize: {
-      min: { width: 20, height: 50 },
-    },
+  // Start size and minimun size of box
+  restrictSize: {
+    min: { width: 20, height: 50 },
+  },
 
-  })
+})
 
-  .on('resizemove', function (event) {
-    var target = event.target,
-        x = (parseFloat(target.getAttribute('data-x')) || 0),
-        y = (parseFloat(target.getAttribute('data-y')) || 0);
+.on('resizemove', function (event) {
+  var target = event.target,
+      x = (parseFloat(target.getAttribute('data-x')) || 0),
+      y = (parseFloat(target.getAttribute('data-y')) || 0);
 
-    // update the element's style 
-    target.style.width  = event.rect.width + 'px';
-    target.style.height = event.rect.height + 'px';
+  // update the element's style 
+  target.style.width  = event.rect.width + 'px';
+  target.style.height = event.rect.height + 'px';
 
-    target.style.webkitTransform = target.style.transform =
-        'translate(' + x + 'px,' + y + 'px)';
+  target.style.webkitTransform = target.style.transform =
+      'translate(' + x + 'px,' + y + 'px)';
 
-    target.setAttribute('data-x', x);
-    target.setAttribute('data-y', y);
+  target.setAttribute('data-x', x);
+  target.setAttribute('data-y', y);
 
-    if ($('.resize-drag-3').height() > 100) {
-      $(".message-diagram-accepted").show(1000);
-    }
+  if ($('.resize-drag-3').height() > 100) {
+    $(".message-diagram-accepted").show(1000);
+  }
 
-    if ($('.resize-drag-3').height() < 100) {
-      $(".message-diagram-accepted").hide(1000);
-    }
-  });
+  if ($('.resize-drag-3').height() < 100) {
+    $(".message-diagram-accepted").hide(1000);
+  }
+});
 
 
   /**** SLIDER ****/
@@ -168,7 +168,8 @@ interact('#dropzone-snail').dropzone({
   .draggable({
     restrict: { restriction: 'self' },
     // keep the drag within the element itself 
-    onmove: function (event) {        
+    onmove: function (event) { 
+      $(".message-slider").show(1000);
         // call this function on every dragmove
       var sliderWidth = interact.getElementRect(event.target.parentNode).width,
           value = event.pageX / sliderWidth;
