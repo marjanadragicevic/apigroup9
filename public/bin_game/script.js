@@ -50,6 +50,9 @@ interact('.bin_plastic').dropzone({
   // listen for drop related events:
   ondrop: function (event) {
     event.relatedTarget.style.visibility = "hidden";
+    if ("#plastic"){  
+      alert("gorgeous!");
+      }
   },
   
 });
@@ -63,6 +66,9 @@ interact('.bin_paper').dropzone({
 
   ondrop: function (event) {
     event.relatedTarget.style.visibility = "hidden";
+    if ("#paper"){  
+      alert("you got this!");
+      }
   },
   
 });
@@ -76,10 +82,11 @@ interact('.bin_metal').dropzone({
 
   ondrop: function (event) {
     event.relatedTarget.style.visibility = "hidden";
+    if ("#metal"){  
+      alert("recycling is fun!");
+      }
   },
   
 });
 
 
-//if ("#plastic"){
-//  alert("try again");}
