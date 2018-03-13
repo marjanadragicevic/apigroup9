@@ -43,6 +43,7 @@ interact('.dropzone').dropzone({
   ondropactivate: function (event) {
     event.target.classList.add('drop-active');
   },
+  
   ondragenter: function (event) {
     var draggableElement = event.relatedTarget,
         dropzoneElement = event.target;

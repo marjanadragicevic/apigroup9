@@ -1,6 +1,5 @@
 body {
     font-family: 'Roboto', sans-serif;   
-
 }
 
 .presentation {
@@ -33,6 +32,10 @@ body {
     min-height: 600px;
     width: 49%;
     display: inline-block;
+    background-image: url(img/recycle.png);
+    background-position: center;
+    background-size: 300px;
+    background-repeat: no-repeat;
 }
 
 .wrapper-right {
@@ -41,8 +44,22 @@ body {
     min-height: 600px;
     width: 49%;
     display: inline-block;
+    background-image: url(img/whoareyou.png);
+    background-position: center;
+    background-size: 300px;
+    background-repeat: no-repeat;
+    z-index: 900;
+    position: relative;
 }
 
+.drop-target {
+    background-image: url(img/opacify2.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-style: solid;
+  }
+  
 
 
   

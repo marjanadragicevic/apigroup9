@@ -1,59 +1,81 @@
 window.onload = function(){
 
-   /*** DRAG AND DROP ***/ 
-    interact('.draggable')
-    .draggable({
-      inertia: true,
-      autoScroll: true,
+    /*** DRAG AND DROP ***/ 
+  interact('.draggable')
+  .draggable({
+    inertia: true,
+    autoScroll: true,
 
-      onmove: dragMoveListener,
+    onmove: dragMoveListener,
 
-      onend: function (event) {
+    onend: function (event) {
 
-        /* Write cool functions here */
-      }
-    });
-   
-     function dragMoveListener (event) {
-      var target = event.target,
-          x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
-          y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
-  
-      // translate the element
-      target.style.webkitTransform =
-      target.style.transform =
-        'translate(' + x + 'px, ' + y + 'px)';
-  
-      // update the posiion attributes
-      target.setAttribute('data-x', x);
-      target.setAttribute('data-y', y);
+      /* Write cool functions here */
     }
-  
-    // Crucial piece for resizing and other functions to work later (. 
-    window.dragMoveListener = dragMoveListener;
-  
+  });
+    
+  function dragMoveListener (event) {
+    var target = event.target,
+        x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+        y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+
+    // translate the element
+    target.style.webkitTransform =
+    target.style.transform =
+      'translate(' + x + 'px, ' + y + 'px)';
+
+    // update the posiion attributes
+    target.setAttribute('data-x', x);
+    target.setAttribute('data-y', y);
   }
 
+  // Crucial piece for resizing and other functions to work later (. 
+  window.dragMoveListener = dragMoveListener;
+}
 
-  /*** DROPZONE ***/ 
-  interact('.wrapper-left').dropzone({
+/*** DROPZONE ***/ 
+interact('.wrapper-left').dropzone({
 
-    accept: '#pointer',
-    overlap: 0.75,
+  accept: '#pointer',
+  overlap: 0.75,
 
-    ondrop: function (event) {
-      window.open("bin_game/index.html");
-      console.log("yes");
-    },
-  })
+  ondrop: function (event) {
+    window.open("bin_game/index.html");
+    console.log("yes");
+  },
 
-  interact('.wrapper-right').dropzone({
+  ondragenter: function (event) {
+    var draggableElement = event.relatedTarget,
+        dropzoneElement = event.target;
 
-    accept: '#pointer',
-    overlap: 0.75,
+    dropzoneElement.classList.add('drop-target');
+    
+  },
 
-    ondrop: function (event) {
-      window.open("feeling_game/index.html");
-      console.log("yes");
-    },
-  })
+  ondragleave: function (event) {
+    event.target.classList.remove('drop-target');
+  },
+})
+
+interact('.wrapper-right').dropzone({
+
+  accept: '#pointer',
+  overlap: 0.75,
+
+  ondrop: function (event) {
+    window.open("feeling_game/index.html");
+    console.log("yes");
+  },
+
+  ondragenter: function (event) {
+    var draggableElement = event.relatedTarget,
+        dropzoneElement = event.target;
+
+    dropzoneElement.classList.add('drop-target');
+    
+  },
+
+  ondragleave: function (event) {
+    event.target.classList.remove('drop-target');
+  },
+})
