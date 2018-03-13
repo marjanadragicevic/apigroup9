@@ -2,12 +2,29 @@ body {
     font-family: 'Roboto', sans-serif;   
 }
 
-li {
-  list-style-type: none;
-}
-
 #page1, #page2, #page3 {
     min-height: 1000px;
+    padding: 40px 15px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    position: relative;
+    text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.next {
+  position: absolute;
+  bottom: 40px;
+  margin: 0 auto;
+  font-size: 30px;
+  left: 40%;
+}
+
+button {
+  cursor: pointer;
 }
 
 .presentation {
@@ -19,11 +36,11 @@ li {
   margin: 0 auto;
 }
 
-.message, .message-cat {
-  border: 1px solid red;
+.message, .message-cat, .message-dog, .message-snail{
   display: block;
   min-height: 20px;
   width: 100%;
+  text-align:center;
 }
 
 #dropzone-cat {
@@ -101,61 +118,75 @@ li {
 /* RESIZE */
 
 
-.resize-drag, .resize-drag-2, .resize-drag-3, .resize-drag-4 {
+.resize-drag, .resize-drag-2, .resize-drag-3{
   background-color:#000;
   color: white;
   font-size: 20px;
   font-family: sans-serif;
   border-radius: 4px 4px 0 0;
   padding: 20px;
-  margin: 30px 20px;
   width: 25px;
   /* This makes things *much* easier */
   box-sizing: border-box;
+  border-top: 4px solid dodgerblue;
 }
 
 .resize-drag {
     position: absolute;
-    bottom: 77px;
-    left: 50px;
+    bottom: 138px;
+    left: 120px;
 }
 
 .resize-drag-2 {
-    position: absolute;
-    bottom: 77px;
-    left: 175px;
+  position: absolute;
+  bottom: 138px;
+  left: 315px;
 }
 
 .resize-drag-3 {
-    position: absolute;
-    bottom: 77px;
-    left: 320px;
+  position: absolute;
+  bottom: 138px;
+  left: 545px;
 }
 
 .resize-container {
   display: inline-block;
-  width: 100%;
-  height: 500px;
+  width: 700px;
+  height: 800px;
   background-image: url(../img/diagram.png);
-  background-position: top left;
-  background-size: 450px;
+  background-position: center;
+  background-size: 700px;
   background-repeat: no-repeat;
   position: relative;
 }
 
+.message-diagram {
+  display: block;
+  position: absolute;
+  left: 170px;
+  bottom: 200px;
+}
+
+.message-diagram-accepted {
+  display: block;
+  position: absolute;
+  left: 170px;
+  bottom: 180px;
+  text-transform: uppercase;
+}
 
 /*** SLDIER **/
 
 /* the slider bar */
 .slider {
   position: relative;
-  width: 100%;
-  height: 1em;
-  margin: 1.5em auto;
+  width: 300px;
+  height: 25px;
+  margin: 250px auto;
   background-color: #000000;
   border-radius: 0.5em;
   box-sizing: border-box;
-  font-size: 3vmin;
+  font-size: 22px;
   -ms-touch-action: none;
   touch-action: none;
 }

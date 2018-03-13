@@ -10,6 +10,8 @@ interact('.draggable')
       elementRect: { top: 0, left: 0, bottom: 1, right: 1 },
     },
     autoScroll: true,
+    /* "Listens" to if the element is draged, see the function below */
+    onmove: dragMoveListener,
   });
 
   function dragMoveListener (event) {
@@ -116,6 +118,7 @@ interact('#dropzone-snail').dropzone({
       elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
     },
   })
+
   .resizable({
     // resize only top
     edges: { left: false, right: false, bottom: false, top: true },
@@ -132,6 +135,7 @@ interact('#dropzone-snail').dropzone({
     },
 
   })
+
   .on('resizemove', function (event) {
     var target = event.target,
         x = (parseFloat(target.getAttribute('data-x')) || 0),
@@ -146,6 +150,14 @@ interact('#dropzone-snail').dropzone({
 
     target.setAttribute('data-x', x);
     target.setAttribute('data-y', y);
+
+    if ($('.resize-drag-3').height() > 100) {
+      $(".message-diagram-accepted").show(1000);
+    }
+
+    if ($('.resize-drag-3').height() < 100) {
+      $(".message-diagram-accepted").hide(1000);
+    }
   });
 
 
@@ -158,10 +170,18 @@ interact('#dropzone-snail').dropzone({
     // keep the drag within the element itself 
     onmove: function (event) {        
         // call this function on every dragmove
-      var sliderHeight = interact.getElementRect(event.target.parentNode).height,
-          value = event.pageX / sliderHeight;
+      var sliderWidth = interact.getElementRect(event.target.parentNode).width,
+          value = event.pageX / sliderWidth;
 
       event.target.style.paddingLeft = (value * 100) + '%'; //Makes sure that it moves with the pointer
       event.target.setAttribute('data-value', value.toFixed(2));
     }
   });
+
+  /** Close the feeling quiz window. **/
+
+  function closeCurrentWindow() {
+    window.close();
+  }
+
+  
