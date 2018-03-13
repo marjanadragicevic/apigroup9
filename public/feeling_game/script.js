@@ -173,8 +173,9 @@ interact('#dropzone-snail').dropzone({
       var sliderWidth = interact.getElementRect(event.target.parentNode).width,
           value = event.pageX / sliderWidth;
 
-      event.target.style.paddingLeft = (value * 100) + '%'; //Makes sure that it moves with the pointer
-      event.target.setAttribute('data-value', value.toFixed(2));
+      /* Padding for making sure that the pointer follows, giving it left padding. **/
+      event.target.style.paddingLeft = (value * 100) + '%'; 
+      event.target.setAttribute('data-value', value.toFixed(1));
     }
   });
 

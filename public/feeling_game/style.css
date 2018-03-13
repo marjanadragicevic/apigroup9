@@ -182,13 +182,14 @@ button {
   position: relative;
   width: 300px;
   height: 25px;
-  margin: 250px auto;
+  margin: 250px 20px;
   background-color: #000000;
   border-radius: 0.5em;
   box-sizing: border-box;
   font-size: 22px;
   -ms-touch-action: none;
   touch-action: none;
+  display: inline-block;
 }
 
 /* the slider handle */
@@ -221,4 +222,74 @@ button {
   text-align: center;
   font-size: 14px;
   color: gray;
+}
+
+
+.img-left-1 {
+  background-image: url(../img/achieve.png);
+  background-position: top left;
+  background-size: 300px;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 100px;
+  position: absolute;
+  transform: translateY(200%);
+}
+
+.img-right-1 {
+  background-image: url(../img/social.png);
+  background-position: top left;
+  background-size: 300px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 250px;
+  height: 100px;
+  position: absolute;
+  transform: translateY(200%);
+}
+
+.img-left-2 {
+  background-image: url(../img/creativity.png);
+  background-position: top left;
+  background-size: 300px;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 100px;
+  position: absolute;
+  transform: translateY(200%);
+}
+
+.img-right-2 {
+  background-image: url(../img/logic.png);
+  background-position: top left;
+  background-size: 300px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 250px;
+  height: 100px;
+  position: absolute;
+  transform: translateY(200%);
+}
+
+.img-left-3 {
+  background-image: url(../img/patience.png);
+  background-position: top left;
+  background-size: 300px;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 100px;
+  position: absolute;
+  transform: translateY(200%);
+}
+
+.img-right-3 {
+  background-image: url(../img/woozy.png);
+  background-position: top left;
+  background-size: 300px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 250px;
+  height: 100px;
+  position: absolute;
+  transform: translateY(200%);
 }
